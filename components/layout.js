@@ -15,13 +15,13 @@ import {
 import { siteContent } from '../data/content';
 
 export default function Layout({ children }) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -35,13 +35,11 @@ export default function Layout({ children }) {
   ];
 
   return (
-    <div className="min-h-screen text-white relative overflow-hidden">      
+    <div className="min-h-screen flex flex-col">
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        scrolled ? 'py-2' : 'py-6'
-      }`}>
-        <div className="container mx-auto">
-          <div className={`nav-container ${scrolled ? 'nav-scrolled' : ''} flex justify-between items-center`}>
+      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-slate-950/95">
+        <div className="container mx-auto px-3 sm:px-4 md:px-6">
+          <div className={`nav-container ${scrolled ? 'nav-scrolled' : ''} flex justify-between items-center py-4`}>
             <Link href="/" className="nav-brand">
               {siteContent.personal.name.split(' ')[0]}
             </Link>
@@ -66,7 +64,7 @@ export default function Layout({ children }) {
             {/* Mobile Menu Button */}
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden glass-card-minimal"
+              className="lg:hidden glass-card-minimal p-2"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -74,8 +72,8 @@ export default function Layout({ children }) {
           
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="lg:hidden mt-4 glass-card-minimal animate-slide-down">
-              <div className="flex flex-col space-y-4 p-6">
+            <div className="lg:hidden glass-card-minimal animate-slide-down mb-2">
+              <div className="flex flex-col space-y-3 p-4">
                 {navigation.map((item) => {
                   const Icon = item.icon;
                   return (
@@ -97,15 +95,15 @@ export default function Layout({ children }) {
       </nav>
       
       {/* Main Content */}
-      <main className="pt-24">
+      <main className="flex-1 pt-20">
         {children}
       </main>
       
       {/* Footer */}
-      <footer className="mt-32 pb-8">
-        <div className="container mx-auto">
+      <footer className="mt-24 pb-6">
+        <div className="container mx-auto px-3 sm:px-4 md:px-6">
           <div className="glass-card-minimal text-center">
-            <div className="grid md:grid-cols-3 gap-8 items-center mb-8">
+            <div className="grid md:grid-cols-3 gap-6 md:gap-8 items-center mb-6">
               <div className="space-y-4">
                 <h4 className="text-lg font-bold text-gradient-accent">Professional Network</h4>
                 <div className="flex justify-center md:justify-start space-x-4">
@@ -138,7 +136,7 @@ export default function Layout({ children }) {
                 <h4 className="text-lg font-bold text-gradient-accent">Get In Touch</h4>
                 <a 
                   href={`mailto:${siteContent.personal.email}`} 
-                  className="btn-ghost"
+                  className="btn-ghost inline-flex"
                 >
                   <Mail size={16} />
                   Contact Me
@@ -146,7 +144,7 @@ export default function Layout({ children }) {
               </div>
             </div>
             
-            <div className="pt-6 border-t border-gray-700/30">
+            <div className="pt-4 border-t border-gray-700/30">
               <p className="text-gray-400 text-sm">
                 © 2024 {siteContent.personal.name}. Precision engineering meets innovative software development.
               </p>
