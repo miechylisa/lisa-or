@@ -461,15 +461,21 @@ export default function Home() {
           >
             <h3 className="text-base font-bold text-white mb-3">Connect</h3>
             <div className="flex gap-2">
-              <a href={siteContent.personal.socialLinks.github} className="social-link p-2" target="_blank" rel="noopener noreferrer">
-                <Github size={16} />
-              </a>
-              <a href={siteContent.personal.socialLinks.linkedin} className="social-link p-2" target="_blank" rel="noopener noreferrer">
-                <Linkedin size={16} />
-              </a>
-              <a href={siteContent.personal.socialLinks.twitter} className="social-link p-2" target="_blank" rel="noopener noreferrer">
-                <Twitter size={16} />
-              </a>
+              {siteContent.personal.socialLinks.github && (
+                <a href={siteContent.personal.socialLinks.github} className="social-link p-2" target="_blank" rel="noopener noreferrer">
+                  <Github size={16} />
+                </a>
+              )}
+              {siteContent.personal.socialLinks.linkedin && (
+                <a href={siteContent.personal.socialLinks.linkedin} className="social-link p-2" target="_blank" rel="noopener noreferrer">
+                  <Linkedin size={16} />
+                </a>
+              )}
+              {siteContent.personal.socialLinks.twitter && (
+                <a href={siteContent.personal.socialLinks.twitter} className="social-link p-2" target="_blank" rel="noopener noreferrer">
+                  <Twitter size={16} />
+                </a>
+              )}
             </div>
           </motion.div>
 
@@ -572,15 +578,21 @@ export default function Home() {
                 </div>
 
                 <div className="flex justify-center gap-2 mb-4">
-                  <a href={siteContent.personal.socialLinks.github} className="social-link p-2" target="_blank" rel="noopener noreferrer">
-                    <Github size={16} />
-                  </a>
-                  <a href={siteContent.personal.socialLinks.linkedin} className="social-link p-2" target="_blank" rel="noopener noreferrer">
-                    <Linkedin size={16} />
-                  </a>
-                  <a href={siteContent.personal.socialLinks.twitter} className="social-link p-2" target="_blank" rel="noopener noreferrer">
-                    <Twitter size={16} />
-                  </a>
+                  {siteContent.personal.socialLinks.github && (
+                    <a href={siteContent.personal.socialLinks.github} className="social-link p-2" target="_blank" rel="noopener noreferrer">
+                      <Github size={16} />
+                    </a>
+                  )}
+                  {siteContent.personal.socialLinks.linkedin && (
+                    <a href={siteContent.personal.socialLinks.linkedin} className="social-link p-2" target="_blank" rel="noopener noreferrer">
+                      <Linkedin size={16} />
+                    </a>
+                  )}
+                  {siteContent.personal.socialLinks.twitter && (
+                    <a href={siteContent.personal.socialLinks.twitter} className="social-link p-2" target="_blank" rel="noopener noreferrer">
+                      <Twitter size={16} />
+                    </a>
+                  )}
                   <a href={`mailto:${siteContent.personal.email}`} className="social-link p-2">
                     <Mail size={16} />
                   </a>
@@ -605,18 +617,18 @@ export default function Home() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
                 <div className="glass-card text-center p-3">
                   <TrendingUp className="text-cyan-400 mx-auto mb-2" size={24} />
-                  <h4 className="font-bold text-base sm:text-lg text-white mb-1">7+ Years</h4>
+                  <h4 className="font-bold text-base sm:text-lg text-white mb-1">5+ Years</h4>
                   <p className="text-gray-400 text-xs sm:text-sm">Experience</p>
                 </div>
                 <div className="glass-card text-center p-3">
                   <Users className="text-blue-400 mx-auto mb-2" size={24} />
-                  <h4 className="font-bold text-base sm:text-lg text-white mb-1">20+ Projects</h4>
+                  <h4 className="font-bold text-base sm:text-lg text-white mb-1">15+ Projects</h4>
                   <p className="text-gray-400 text-xs sm:text-sm">Delivered</p>
                 </div>
                 <div className="glass-card text-center p-3">
                   <Zap className="text-green-400 mx-auto mb-2" size={24} />
-                  <h4 className="font-bold text-base sm:text-lg text-white mb-1">CEO & CTO</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm">Leadership</p>
+                  <h4 className="font-bold text-base sm:text-lg text-white mb-1">BIT Specialist</h4>
+                  <p className="text-gray-400 text-xs sm:text-sm">Excellence</p>
                 </div>
               </div>
 
@@ -793,8 +805,8 @@ export default function Home() {
               </div>
 
               <p className="text-sm sm:text-base text-gray-300 mb-4 sm:mb-6 max-w-2xl mx-auto leading-relaxed">
-                Looking for a multidisciplinary technologist to architect your next breakthrough? Let&#39;s discuss how my Web3 expertise, 
-                quantitative trading systems, and full-stack development skills can drive your technical vision forward.
+                Seeking a results-driven Business Information Technology specialist to transform your organizational operations? 
+                Let&#39;s discuss how my data management expertise, administrative excellence, and digital innovation skills can drive your business forward.
               </p>
 
               <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-2 sm:gap-3">
@@ -802,13 +814,15 @@ export default function Home() {
                   <Mail size={16} />
                   Send Email
                 </a>
-                <a href={siteContent.personal.socialLinks.linkedin} className="btn-secondary text-sm py-2" target="_blank" rel="noopener noreferrer">
-                  <Linkedin size={16} />
-                  Connect on LinkedIn
-                </a>
-                <a href={siteContent.personal.socialLinks.github} className="btn-ghost text-sm py-2" target="_blank" rel="noopener noreferrer">
-                  <Github size={16} />
-                  View GitHub
+                {siteContent.personal.socialLinks.github && (
+                  <a href={siteContent.personal.socialLinks.github} className="btn-secondary text-sm py-2" target="_blank" rel="noopener noreferrer">
+                    <Github size={16} />
+                    View GitHub
+                  </a>
+                )}
+                <a href={`tel:${siteContent.personal.phone}`} className="btn-ghost text-sm py-2">
+                  <Phone size={16} />
+                  Call Now
                 </a>
               </div>
 
