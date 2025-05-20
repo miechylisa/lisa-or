@@ -218,7 +218,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-950 text-white relative">
       {/* Mobile Navigation Header */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-xl border-b border-white/10">
+      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-slate-950/90 backdrop-blur-2xl border-b border-white/10">
         <div className="flex items-center justify-between p-4">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 relative">
@@ -544,7 +544,7 @@ export default function Home() {
                 <Target className="text-blue-400" size={28} />
                 <h2 className="text-2xl sm:text-3xl font-black text-gradient-primary">Professional Overview</h2>
               </div>
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
                 <div className="glass-card text-center">
                   <TrendingUp className="text-cyan-400 mx-auto mb-3" size={32} />
