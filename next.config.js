@@ -7,8 +7,8 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  assetPrefix: '/cv-website',
-  basePath: '/cv-website'
+  assetPrefix: '/lisa-or',
+  basePath: '/lisa-or'
 }
 
 module.exports = nextConfig
