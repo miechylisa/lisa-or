@@ -705,15 +705,17 @@ export default function Home() {
                 transition={{ duration: 0.6 }}
                 className="glass-container p-4"
               >
-                <div className="w-20 h-20 mx-auto relative mb-3">
+                <div className="w-20 h-20 mx-auto relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-cyan-400 to-teal-400 rounded-full blur-lg opacity-60"></div>
-                  <div className="relative w-full h-full bg-gradient-to-br from-blue-600 to-cyan-500 rounded-full p-1">
+                  <div className="relative w-full h-full bg-gradient-to-br from-blue-600 to-cyan-500 rounded-full p-1 overflow-hidden">
                     {siteContent.personal.profileImage ? (
-                      // eslint-disable-next-line @next/next/no-img-element
+                      /* eslint-disable-next-line @next/next/no-img-element */
                       <img 
                         src={siteContent.personal.profileImage}
                         alt={siteContent.personal.name}
-                        className="w-full h-full object-cover rounded-full"
+                        className="w-full h-full object-cover rounded-full block"
+                        loading="eager"
+                        style={{ minHeight: '76px', minWidth: '76px' }}
                       />
                     ) : (
                       <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 rounded-full flex items-center justify-center">
