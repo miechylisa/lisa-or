@@ -489,9 +489,9 @@ export default function Home() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="absolute top-full left-0 right-0 bg-slate-950/98 backdrop-blur-xl border-b border-white/10"
+              className="absolute top-full left-0 right-0 bg-slate-950/95 backdrop-blur-2xl border border-white/20 shadow-2xl"
             >
-              <div className="p-3 space-y-1">
+              <div className="p-3 space-y-1 bg-slate-950/85 backdrop-blur-2xl rounded-b-xl border-x border-b border-white/15">
                 {navigationItems.map((item) => {
                   const Icon = item.icon;
                   return (
